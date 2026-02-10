@@ -1,3 +1,3 @@
-module zambone-devex
+module github.com/fzambone/zambone-one-cli
 
-go 1.25
+go 1.25.7

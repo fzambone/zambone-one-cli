@@ -1,0 +1,27 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  enable:
+    - staticcheck
+    - revive
+    - govet
+    - errcheck
+    - goconst
+
+linters-settings:
+  staticcheck:
+    checks:
+      - "all"
+      - "-ST1000"  # Package comments style
+      - "-ST1016"  # Method receiver name style
+
+  revive:
+    rules:
+      - name: exported
+        arguments: ["checkPrivateReceivers"]
+      - name: package-comments
+      - name: error-naming
+      - name: error-strings
